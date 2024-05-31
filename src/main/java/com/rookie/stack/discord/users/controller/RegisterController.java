@@ -1,6 +1,9 @@
 package com.rookie.stack.discord.users.controller;
 
 import com.rookie.stack.discord.common.domain.vo.resp.ApiResult;
+import com.rookie.stack.discord.users.domain.vo.req.register.EmailRegistrationDetails;
+import com.rookie.stack.discord.users.domain.vo.req.register.GithubRegistrationDetails;
+import com.rookie.stack.discord.users.domain.vo.req.register.PhoneRegistrationDetails;
 import com.rookie.stack.discord.users.domain.vo.resp.RegistrationResponse;
 import com.rookie.stack.discord.users.service.RegisterService;
 import com.rookie.stack.discord.users.service.register.RegistrationDetails;
@@ -29,9 +32,11 @@ public class RegisterController {
     public ApiResult<RegistrationResponse> register(@RequestBody RegistrationDetails details,
                                                     HttpServletRequest request){
         RegisterService registrationService = registrationServiceFactory.getRegistrationService(details.getType());
+
         RegistrationResponse response = registrationService.register(details);
         return ApiResult.success(response);
     }
+
 
 
 }

@@ -8,6 +8,8 @@ import com.rookie.stack.discord.users.service.register.RegistrationDetails;
  * @description
  * @date 2024/5/31
  */
-public interface RegisterService {
-    RegistrationResponse register(RegistrationDetails registrationDetails);
+public interface RegisterService<T extends RegistrationDetails> {
+    RegistrationResponse register(T registrationDetails);
+
+    void validate(T registrationDetails);
 }

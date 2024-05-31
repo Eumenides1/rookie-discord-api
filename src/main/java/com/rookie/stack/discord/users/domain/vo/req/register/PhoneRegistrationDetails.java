@@ -12,6 +12,6 @@ import lombok.EqualsAndHashCode;
 @EqualsAndHashCode(callSuper = true)
 @Data
 public class PhoneRegistrationDetails extends RegistrationDetails {
-    private String phoneNumber;
+    private String phone;
     private String verificationCode;
 }
