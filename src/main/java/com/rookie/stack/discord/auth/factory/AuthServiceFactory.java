@@ -1,6 +1,6 @@
-package com.rookie.stack.discord.service.auth.factory;
+package com.rookie.stack.discord.auth.factory;
 
-import com.rookie.stack.discord.service.auth.AuthService;
+import com.rookie.stack.discord.auth.AuthService;
 import org.springframework.stereotype.Component;
 
 import java.util.HashMap;

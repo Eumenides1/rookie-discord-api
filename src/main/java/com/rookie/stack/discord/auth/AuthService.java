@@ -1,4 +1,4 @@
-package com.rookie.stack.discord.service.auth;
+package com.rookie.stack.discord.auth;
 
 import com.rookie.stack.discord.domain.auth.dto.credentials.Credentials;
 import com.rookie.stack.discord.domain.auth.vo.resp.AuthResponse;

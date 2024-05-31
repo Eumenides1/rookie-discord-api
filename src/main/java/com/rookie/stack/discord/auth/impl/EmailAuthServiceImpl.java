@@ -1,10 +1,8 @@
-package com.rookie.stack.discord.service.auth.impl;
+package com.rookie.stack.discord.auth.impl;
 
-import com.rookie.stack.discord.domain.auth.dto.credentials.Credentials;
 import com.rookie.stack.discord.domain.auth.dto.credentials.EmailCredentials;
 import com.rookie.stack.discord.domain.auth.vo.resp.AuthResponse;
-import com.rookie.stack.discord.service.auth.AbstractAuthService;
-import com.rookie.stack.discord.service.auth.AuthService;
+import com.rookie.stack.discord.auth.AbstractAuthService;
 import org.springframework.stereotype.Service;
 
 /**

@@ -2,6 +2,8 @@ package com.rookie.stack.discord.users.service;
 
 import com.rookie.stack.discord.users.domain.entity.Users;
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.rookie.stack.discord.users.domain.vo.resp.RegistrationResponse;
+import com.rookie.stack.discord.users.service.register.RegistrationDetails;
 
 /**
  * <p>
@@ -12,5 +14,14 @@ import com.baomidou.mybatisplus.extension.service.IService;
  * @since 2024-05-31
  */
 public interface IUsersService {
+
+    Users getUserInfoByEmail(String email);
+
+
+    Users getUserInfoByPhone(String phone);
+
+
+
+
 
 }

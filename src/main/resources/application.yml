@@ -5,7 +5,7 @@ spring:
     #?????
     active: test
   application:
-    name: rookie-discord
+    name: rookie_discord_api
   datasource:
     url: jdbc:mysql://${discord.mysql.ip}:${discord.mysql.port}/${discord.mysql.db}?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
     username: ${discord.mysql.username}
@@ -23,3 +23,5 @@ logging:
 mybatis-plus:
   configuration:
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  type-handlers-package:
+    com.rookie.stack.discord.common.handler
