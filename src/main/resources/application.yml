@@ -1,0 +1,25 @@
+server:
+  port: ${discord.server.port}
+spring:
+  profiles:
+    #?????
+    active: test
+  application:
+    name: rookie-discord
+  datasource:
+    url: jdbc:mysql://${discord.mysql.ip}:${discord.mysql.port}/${discord.mysql.db}?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
+    username: ${discord.mysql.username}
+    password: ${discord.mysql.password}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  mvc:
+    pathmatch:
+      matching-strategy: ANT_PATH_MATCHER
+
+# logger ??
+logging:
+  config: classpath:logback.xml
+
+#mybatis-plus????????????SQL??
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
