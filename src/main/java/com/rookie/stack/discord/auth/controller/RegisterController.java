@@ -7,6 +7,8 @@ import com.rookie.stack.discord.auth.RegistrationDetails;
 import com.rookie.stack.discord.auth.factory.RegistrationServiceFactory;
 import com.rookie.stack.discord.common.utils.Ip2RegionUtil;
 import com.rookie.stack.discord.common.utils.IpUtil;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -22,7 +24,8 @@ import javax.validation.Valid;
  * @date 2024/5/31
  */
 @RestController
-@RequestMapping("/register")
+@RequestMapping("/capi/auth/register")
+@Api(tags = "用户注册相关接口")
 public class RegisterController {
 
     @Resource
@@ -32,6 +35,7 @@ public class RegisterController {
     Ip2RegionUtil ip2RegionUtil;
 
     @PostMapping
+    @ApiOperation(value = "用户注册")
     public ApiResult<RegistrationResponse> register(@Valid @RequestBody RegistrationDetails details,
                                                     HttpServletRequest request){
 
