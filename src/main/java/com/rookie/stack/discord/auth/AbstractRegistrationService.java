@@ -28,7 +28,7 @@ public abstract class AbstractRegistrationService<T extends  RegistrationDetails
         if (i != 1) {
             throw new BusinessException("用户创建失败！");
         }
-        return new RegistrationResponse();
+        return RegistrationResponse.builder().userId(user.getUserId()).build();
     }
 
     protected abstract Users doRegister(T registrationDetails);

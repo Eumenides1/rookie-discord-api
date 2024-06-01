@@ -25,4 +25,6 @@ import lombok.Data;
 })
 public abstract class RegistrationDetails {
     private String type;
+
+    private String localString;
 }

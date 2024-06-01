@@ -35,6 +35,7 @@ public class EmailRegistrationServiceImpl extends AbstractRegistrationService<Em
                 userId(snowflake.nextIdStr()).
                 email(registrationDetails.getEmail()).
                 passwordHash(registrationDetails.getPassword()).
+                localAddr(registrationDetails.getLocalString()).
                 state(UserStateEnum.ACTIVE.getCode())
                 .build();
     }
