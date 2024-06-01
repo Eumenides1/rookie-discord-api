@@ -1,10 +1,10 @@
-package com.rookie.stack.discord.users.service.register;
+package com.rookie.stack.discord.auth;
 
 import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
-import com.rookie.stack.discord.users.domain.vo.req.register.EmailRegistrationDetails;
-import com.rookie.stack.discord.users.domain.vo.req.register.GithubRegistrationDetails;
-import com.rookie.stack.discord.users.domain.vo.req.register.PhoneRegistrationDetails;
+import com.rookie.stack.discord.auth.domain.vo.req.register.EmailRegistrationDetails;
+import com.rookie.stack.discord.auth.domain.vo.req.register.GithubRegistrationDetails;
+import com.rookie.stack.discord.auth.domain.vo.req.register.PhoneRegistrationDetails;
 import lombok.Data;
 
 /**

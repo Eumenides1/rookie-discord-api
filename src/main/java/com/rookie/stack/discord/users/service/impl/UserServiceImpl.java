@@ -3,9 +3,7 @@ package com.rookie.stack.discord.users.service.impl;
 import com.rookie.stack.discord.common.enums.RegisterType;
 import com.rookie.stack.discord.users.dao.UsersDao;
 import com.rookie.stack.discord.users.domain.entity.Users;
-import com.rookie.stack.discord.users.domain.vo.resp.RegistrationResponse;
 import com.rookie.stack.discord.users.service.IUsersService;
-import com.rookie.stack.discord.users.service.register.RegistrationDetails;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;

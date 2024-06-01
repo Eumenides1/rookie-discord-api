@@ -1,4 +1,4 @@
-package com.rookie.stack.discord.auth.impl;
+package com.rookie.stack.discord.auth.handler.login;
 
 import com.rookie.stack.discord.domain.auth.dto.credentials.EmailCredentials;
 import com.rookie.stack.discord.domain.auth.vo.resp.AuthResponse;

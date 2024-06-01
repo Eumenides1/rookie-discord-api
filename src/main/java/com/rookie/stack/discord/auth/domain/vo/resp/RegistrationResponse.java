@@ -1,4 +1,4 @@
-package com.rookie.stack.discord.users.domain.vo.resp;
+package com.rookie.stack.discord.auth.domain.vo.resp;
 
 import lombok.Data;
 

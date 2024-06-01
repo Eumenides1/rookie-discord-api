@@ -4,9 +4,12 @@ import com.rookie.stack.discord.common.domain.vo.resp.ApiResult;
 import com.rookie.stack.discord.common.error.CommonErrorEnum;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
+
+import static com.rookie.stack.discord.common.error.CommonErrorEnum.PARAM_INVALID;
 
 /**
  * @author eumenides
@@ -16,6 +19,17 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 @RestControllerAdvice
 @Slf4j
 public class GlobalExceptionHandler {
+
+    @ExceptionHandler(value = MethodArgumentNotValidException.class)
+    public ApiResult<?> methodArgumentNotValidException(MethodArgumentNotValidException e) {
+
+        StringBuilder errMsg = new StringBuilder();
+        e.getBindingResult().getFieldErrors()
+                .forEach(x -> errMsg.append(x.getField()).append(x.getDefaultMessage()).append(","));
+        String message = errMsg.toString();
+
+        return ApiResult.fail(PARAM_INVALID.getCode(), message.substring(0, message.length() - 1));
+    }
 
     @ExceptionHandler(value = IllegalArgumentException.class)
     public ApiResult illegalArgumentExceptionHandler(IllegalArgumentException e) {

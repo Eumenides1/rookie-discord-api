@@ -1,11 +1,9 @@
-package com.rookie.stack.discord.users.service.register.factory;
+package com.rookie.stack.discord.auth.factory;
 
-import com.rookie.stack.discord.users.service.RegisterService;
+import com.rookie.stack.discord.auth.RegisterService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 /**

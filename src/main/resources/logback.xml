@@ -30,7 +30,7 @@
             <!--保留天数-->
             <maxHistory>30</maxHistory>
             <!--单个文件的大小-->
-            <totalSizeCap>5GB</totalSizeCap>
+            <totalSizeCap>100MB</totalSizeCap>
         </rollingPolicy>
 
     </appender>

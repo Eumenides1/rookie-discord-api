@@ -1,6 +1,6 @@
-package com.rookie.stack.discord.users.domain.vo.req.register;
+package com.rookie.stack.discord.auth.domain.vo.req.register;
 
-import com.rookie.stack.discord.users.service.register.RegistrationDetails;
+import com.rookie.stack.discord.auth.RegistrationDetails;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 

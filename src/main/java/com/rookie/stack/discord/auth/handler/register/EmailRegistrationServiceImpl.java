@@ -1,4 +1,4 @@
-package com.rookie.stack.discord.users.service.register.handler;
+package com.rookie.stack.discord.auth.handler.register;
 
 import cn.hutool.core.lang.Snowflake;
 import com.rookie.stack.discord.common.enums.RegisterType;
@@ -6,10 +6,8 @@ import com.rookie.stack.discord.common.enums.UserStateEnum;
 import com.rookie.stack.discord.common.utils.AssertUtil;
 import com.rookie.stack.discord.users.dao.UsersDao;
 import com.rookie.stack.discord.users.domain.entity.Users;
-import com.rookie.stack.discord.users.domain.vo.req.register.EmailRegistrationDetails;
-import com.rookie.stack.discord.users.domain.vo.resp.RegistrationResponse;
-import com.rookie.stack.discord.users.service.register.AbstractRegistrationService;
-import com.rookie.stack.discord.users.service.register.RegistrationDetails;
+import com.rookie.stack.discord.auth.domain.vo.req.register.EmailRegistrationDetails;
+import com.rookie.stack.discord.auth.AbstractRegistrationService;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -39,16 +37,5 @@ public class EmailRegistrationServiceImpl extends AbstractRegistrationService<Em
                 passwordHash(registrationDetails.getPassword()).
                 state(UserStateEnum.ACTIVE.getCode())
                 .build();
-    }
-
-
-    @Override
-    public void validate(EmailRegistrationDetails registrationDetails) {
-        if (registrationDetails.getEmail() == null || registrationDetails.getEmail().isEmpty()) {
-            throw new IllegalArgumentException("Email is required for email registration.");
-        }
-        if (registrationDetails.getPassword() == null || registrationDetails.getPassword().isEmpty()) {
-            throw new IllegalArgumentException("Password is required for email registration.");
-        }
     }
 }

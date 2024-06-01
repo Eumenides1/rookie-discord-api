@@ -1,12 +1,11 @@
-package com.rookie.stack.discord.users.service.register;
+package com.rookie.stack.discord.auth;
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.rookie.stack.discord.common.exception.BusinessException;
 import com.rookie.stack.discord.users.dao.UsersDao;
 import com.rookie.stack.discord.users.domain.entity.Users;
-import com.rookie.stack.discord.users.domain.vo.resp.RegistrationResponse;
+import com.rookie.stack.discord.auth.domain.vo.resp.RegistrationResponse;
 import com.rookie.stack.discord.users.mapper.UsersMapper;
-import com.rookie.stack.discord.users.service.RegisterService;
 
 import javax.annotation.Resource;
 
@@ -24,7 +23,6 @@ public abstract class AbstractRegistrationService<T extends  RegistrationDetails
 
     @Override
     public RegistrationResponse register(T registrationDetails) {
-        validate(registrationDetails);
         Users user = doRegister(registrationDetails);
         int i = dao.insertUser(user);
         if (i != 1) {
@@ -35,6 +33,5 @@ public abstract class AbstractRegistrationService<T extends  RegistrationDetails
 
     protected abstract Users doRegister(T registrationDetails);
 
-    @Override
-    public abstract void validate(T registrationDetails);
+
 }
